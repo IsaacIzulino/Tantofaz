@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apresentação Formal</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --roxo-suave: #e6e0f8;
+      --roxo-forte: #5e2b97;
+      --roxo-medio: #9b59b6;
+      --texto: #2c2c2c;
+      --fundo: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: var(--roxo-forte);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeSlideDown 1s ease forwards;
+      opacity: 0;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      padding: 3rem 10%;
+    }
+
+    section {
+      background-color: var(--roxo-suave);
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 8px;
+      animation: fadeSlideUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    h2 {
+      color: var(--roxo-forte);
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--roxo-medio);
+      padding-left: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .download-btn {
+      background-color: var(--roxo-medio);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s;
+      margin-top: 1rem;
+    }
+
+    .download-btn:hover {
+      background-color: var(--roxo-forte);
+    }
+
+    /* Carrossel */
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    .carousel img {
+      width: 100%;
+      flex-shrink: 0;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .form-contato form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-contato input,
+    .form-contato textarea {
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-contato button {
+      padding: 0.8rem;
+      background-color: var(--roxo-medio);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-contato button:hover {
+      background-color: var(--roxo-forte);
+    }
+
+    footer {
+      background-color: var(--roxo-forte);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      animation: fadeSlideUp 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #d1b3ff;
+    }
+
+    /* Animações */
+    @keyframes fadeSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .social-icons {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Apresentação Profissional</h1>
+    <p>Seu projeto, ideia ou perfil em destaque</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Sobre</h2>
+      <p>
+        Esta apresentação foi desenvolvida com um tema em tons de roxo para transmitir criatividade,
+        elegância e profissionalismo.
+      </p>
+      <a class="download-btn" href="curriculo.pdf" download>📄 Baixar PDF</a>
+    </section>
+
+    <section>
+      <h2>Carrossel de Projetos</h2>
+      <div class="carousel" id="carousel">
+        <img src="https://via.placeholder.com/800x200/9b59b6/fff?text=Projeto+1" alt="Projeto 1">
+        <img src="https://via.placeholder.com/800x200/8e44ad/fff?text=Projeto+2" alt="Projeto 2">
+        <img src="https://via.placeholder.com/800x200/5e2b97/fff?text=Projeto+3" alt="Projeto 3">
+      </div>
+    </section>
+
+    <section class="form-contato">
+      <h2>Contato</h2>
+      <form action="mailto:seuemail@dominio.com" method="POST" enctype="text/plain">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Apresentação Formal. Todos os direitos reservados.</p>
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/seu-perfil" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/seuusuario" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/seuusuario" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:seuemail@dominio.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Script simples de carrossel automático
+    const carousel = document.getElementById('carousel');
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % carousel.children.length;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+
+    // Ativando animações ao carregar
+    window.addEventListener("load", () => {
+      document.querySelectorAll("header, section, .social-icons").forEach(el => {
+        el.style.opacity = 1;
+      });
+    });
+  </script>
+
+</body>
+</html>
